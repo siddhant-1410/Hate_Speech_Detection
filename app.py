@@ -26,7 +26,7 @@ def load_artifacts():
 model, tokenizer, max_length = load_artifacts()
 class_names = {0: "Hate Speech", 1: "Offensive Language", 2: "Neither"}
 
-# Initialize session state for chat history
+#Chat_history
 if "messages" not in st.session_state:
     st.session_state.messages = []
     # Add welcome message
@@ -35,7 +35,7 @@ if "messages" not in st.session_state:
         "content": "Hello! I'm your Hate Speech Detection assistant. Send me any text and I'll analyze it for hate speech, offensive language, or classify it as neither. What would you like me to analyze?"
     })
 
-# Custom CSS for chat interface
+# CSS
 st.markdown("""
 <style>
     .chat-container {
@@ -105,11 +105,11 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# App title
+
 st.title("🛡️ Hate Speech Detection Chatbot")
 st.markdown("### Chat with AI to detect hate speech, offensive language, or neutral content")
 
-# Chat container
+
 chat_container = st.container()
 
 # Display chat messages
@@ -166,7 +166,7 @@ with chat_container:
                 </div>
                 """, unsafe_allow_html=True)
 
-# Input section
+
 st.markdown("---")
 col1, col2 = st.columns([4, 1])
 
@@ -182,7 +182,7 @@ with col2:
 
 # Handle user input
 if send_button and user_input.strip():
-    # Add user message to chat
+    
     st.session_state.messages.append({
         "role": "user",
         "content": user_input
@@ -198,7 +198,7 @@ if send_button and user_input.strip():
             pred_class = np.argmax(prediction)
             confidence = float(np.max(prediction))
             
-            # Simulate processing time for better UX
+           
             time.sleep(0.5)
         
         # Add assistant response with prediction
@@ -223,7 +223,7 @@ if send_button and user_input.strip():
 elif send_button and not user_input.strip():
     st.warning("Please enter some text to analyze!")
 
-# Sidebar with information
+# Sidebar
 with st.sidebar:
     st.markdown("### 📊 Model Information")
     st.info("""
@@ -250,12 +250,12 @@ with st.sidebar:
         })
         st.rerun()
     
-    # Show statistics
+  
     if len(st.session_state.messages) > 1:
         user_messages = len([m for m in st.session_state.messages if m["role"] == "user"])
         st.metric("Messages Analyzed", user_messages)
 
-# Footer
+
 st.markdown("---")
 st.markdown("""
 <div style="text-align: center; color: #666; font-size: 0.9em;">
