@@ -25,8 +25,7 @@ This project implements a hate speech detection system that can analyze text con
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/yourusername/hate-speech-detection-chatbot.git
-   cd hate-speech-detection-chatbot
+   git clone https://github.com/siddhant-1410/Hate_Speech_Detection.git
    ```
 
 2. Create a virtual environment
