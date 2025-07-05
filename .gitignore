@@ -3,6 +3,10 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+#virtual environments
+hatespeecg/
+nltk_data
+
 # C extensions
 *.so
 

@@ -1,0 +1,7 @@
+tensorflow
+gradio
+pandas
+numpy
+spacy
+streamlit
+nltk
